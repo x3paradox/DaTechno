@@ -61,6 +61,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         bottomNavigationBar: ClipRRect(
           borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
           child: WaterDropNavBar(
+            bottomPadding: 10,
             backgroundColor: navigationBarColor,
             waterDropColor: Color(0xffFF4E00),
             onItemSelected: (int index) {

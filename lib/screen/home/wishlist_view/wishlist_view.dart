@@ -1,6 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 // import 'package:wish_list/placeorder.dart';
+import 'package:flutter/cupertino.dart';
 
 class WishListPage extends StatefulWidget {
   const WishListPage({Key? key}) : super(key: key);
@@ -105,7 +107,7 @@ class _WishListPageState extends State<WishListPage> {
                       height: MediaQuery.of(context).size.height / 1,
                       decoration: BoxDecoration(
                           // color: Colors.yellowAccent,
-                          border: Border.all()
+                          border: Border.all(color: Color(0xff989898), width: 2)
 
                           // borderRadius: BorderRadius.circular(15),
                           ),
@@ -143,31 +145,61 @@ class _WishListPageState extends State<WishListPage> {
                             flex: 2,
                             child: Column(
                               children: [
-                                Text(
-                                  'OnePLus 10 Pro 5G',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18),
-                                ),
-                                Text('69,999.00',
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(right: 5, left: 5),
+                                  child: AutoSizeText(
+                                    'OnePlus 10 Pro 5G',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20)),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    minFontSize: 18,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                AutoSizeText(
+                                  '\u{20B9}66,999',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  minFontSize: 18,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ],
                             ),
                           ),
-                          Divider(
-                            thickness: 1,
-                            color: Colors.black,
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: Text(
-                              'MOVE TO CART',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xffff4e00)),
-                            ),
+                          // Divider(
+                          //   thickness: 2,
+                          //   color: Color(0xff989898),
+                          // ),
+                          Expanded(
+                            flex: 2,
+                            child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 42.5,
+                                decoration: BoxDecoration(
+                                  color: Color(0xffFF4E00),
+                                ),
+                                child: CupertinoButton(
+                                  onPressed: () {
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(
+                                    //       builder: (context) => BottomNavBar()),
+                                    // );
+                                  },
+                                  child: AutoSizeText(
+                                    "add to cart".toUpperCase(),
+                                    style: TextStyle(color: Colors.white),
+                                    presetFontSizes: [40, 20, 14],
+                                    maxLines: 4,
+                                  ),
+                                  padding: EdgeInsets.all(10),
+                                )),
                           )
                         ],
                       ),

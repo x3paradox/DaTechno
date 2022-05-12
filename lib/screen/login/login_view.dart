@@ -8,6 +8,7 @@ import 'package:animated_button/animated_button.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:auth_buttons/auth_buttons.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -174,22 +175,34 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 40,
               ),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.75,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Color(0xffFF4E00),
-                  ),
-                  child: CupertinoButton(
-                    onPressed: () {},
-                    child: Text("Click Me",
-                    
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Color(0xffFF4E00),
                     ),
-                    padding: EdgeInsets.all(10),
-                  )),
+                    child: CupertinoButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BottomNavBar()),
+                        );
+                      },
+                      child: AutoSizeText(
+                        "login".toUpperCase(),
+                        style: TextStyle(color: Colors.white),
+                        presetFontSizes: [40, 20, 14],
+                        maxLines: 4,
+                      ),
+                      padding: EdgeInsets.all(10),
+                    )),
+              ),
               // Padding(
               //   padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
               //   child: AnimatedButton(
@@ -215,56 +228,62 @@ class _LoginViewState extends State<LoginView> {
               SizedBox(
                 height: 15,
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Don't have an account?",
-                      style: TextStyle(fontSize: 17.5, color: Colors.black54),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Don't have an account?",
+                    style: TextStyle(fontSize: 17.5, color: Colors.black54),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegisterView()),
+                      );
+                    },
+                    child: Text(
+                      "Register here!",
+                      style: TextStyle(fontSize: 17.5, color: Colors.blue),
                     ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => RegisterView()),
-                        );
-                      },
-                      child: Text(
-                        "Register here!",
-                        style: TextStyle(fontSize: 17.5, color: Colors.blue),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 15,
               ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: SignInButton(
-                  Buttons.Google,
-                  elevation: 15,
-                  mini: false,
-                  onPressed: () {
-                    _showButtonPressDialog(context, 'Google');
-                  },
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: GoogleAuthButton(
+                    onPressed: () {},
+                    darkMode: false,
+                    style: AuthButtonStyle(
+                      iconType: AuthIconType.secondary,
+                    ),
+                  ),
                 ),
               ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: SignInButton(
-                  Buttons.FacebookNew,
-                  elevation: 15,
-                  mini: false,
-                  onPressed: () {
-                    _showButtonPressDialog(context, 'Google');
-                  },
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: FacebookAuthButton(
+                    onPressed: () {},
+                    darkMode: false,
+                    style: AuthButtonStyle(
+                      iconType: AuthIconType.secondary,
+                    ),
+                  ),
                 ),
+              ),
+              SizedBox(
+                height: 75,
               ),
             ],
           ),

@@ -56,7 +56,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 1',
@@ -65,7 +65,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 2',
@@ -74,7 +74,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 3',
@@ -83,7 +83,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 4',
@@ -92,7 +92,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 5',
@@ -101,7 +101,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 6',
@@ -110,7 +110,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 7',
@@ -119,7 +119,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 8',
@@ -128,7 +128,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 9',
@@ -137,7 +137,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 10',
@@ -146,7 +146,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 11',
@@ -155,7 +155,7 @@ class _FAQsViewState extends State<FAQsView> {
           ),
           GFAccordion(
             collapsedTitleBackgroundColor: Color(0xffEDEDED),
-            expandedTitleBackgroundColor: Colors.green,
+            expandedTitleBackgroundColor: Color(0xffFF4E00),
             collapsedIcon: Icon(FontAwesome.angle_down),
             expandedIcon: Icon(FontAwesome.angle_up),
             title: 'Question 12',

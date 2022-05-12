@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Container(
               // height: 60,
-              width: MediaQuery.of(context).size.width,
+              width: MediaQuery.of(context).size.width * 1,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -114,29 +114,27 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.83,
+                    width: MediaQuery.of(context).size.width * 0.65,
                     child: CupertinoSearchTextField(),
                   ),
-                  Expanded(
-                    child: Badge(
-                      // padding: EdgeInsets,
-                      badgeContent: Text(
-                        '4',
-                        style: TextStyle(color: Colors.white),
+                  Badge(
+                    // padding: EdgeInsets,
+                    badgeContent: Text(
+                      '4',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    position: BadgePosition.topEnd(top: 0, end: 2),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.notifications,
                       ),
-                      position: BadgePosition.topEnd(top: 0, end: 2),
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.notifications,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => NotificationView()),
-                          );
-                        },
-                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NotificationView()),
+                        );
+                      },
                     ),
                   ),
                 ],

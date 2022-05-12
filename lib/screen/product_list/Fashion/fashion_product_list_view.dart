@@ -97,11 +97,7 @@ class _FashionProductListViewState extends State<FashionProductListView> {
               ],
             ),
           ),
-          // Container(
-          //   height: 1000,
-          //   width: MediaQuery.of(context).size.width,
-          //   color: Colors.grey,
-          // )
+          
           SizedBox(
             height: 5,
           ),

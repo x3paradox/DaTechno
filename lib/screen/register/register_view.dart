@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:da_techno_app/screen/login/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -46,9 +47,9 @@ class _RegisterViewState extends State<RegisterView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Lottie.asset("assets/login.json",height: 250, width: 250),
+                Lottie.asset("assets/login.json", height: 250, width: 250),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text("Register Account",
@@ -208,6 +209,12 @@ class _RegisterViewState extends State<RegisterView> {
                       if (value == null || value.isEmpty) {
                         return 'Please enter password';
                       }
+                      if (value.length < 4) {
+                        return 'Must be more than 4 charater';
+                      }
+                      if (value.length > 12) {
+                        return 'Must be lesser than 12 charater';
+                      }
                       return null;
                     },
                     decoration: InputDecoration(
@@ -348,54 +355,76 @@ class _RegisterViewState extends State<RegisterView> {
                 SizedBox(
                   height: 20,
                 ),
-                AnimatedButton(
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  color: Color(0xffFF4E00),
-                  shadowDegree: ShadowDegree.dark,
-                  enabled: true,
-                  onPressed: () {
-                    if (formKey.currentState!.validate()) {
-                      setState(() {
-                        loader = true;
-                      });
-                    }
-                  },
-                  child: Text(
-                    "REGISTER",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600),
-                  ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Color(0xffFF4E00),
+                      ),
+                      child: CupertinoButton(
+                        onPressed: () {
+                          if (formKey.currentState!.validate()) {
+                            setState(() {
+                              loader = true;
+                            });
+                          }
+                        },
+                        child: AutoSizeText(
+                          "register".toUpperCase(),
+                          style: TextStyle(color: Colors.white),
+                          presetFontSizes: [40, 20, 14],
+                          maxLines: 4,
+                        ),
+                        padding: EdgeInsets.all(10),
+                      )),
                 ),
+                // AnimatedButton(
+                //   width: MediaQuery.of(context).size.width * 0.9,
+                //   color: Color(0xffFF4E00),
+                //   shadowDegree: ShadowDegree.dark,
+                //   enabled: true,
+                //   onPressed: () {
+                //     if (formKey.currentState!.validate()) {
+                //       setState(() {
+                //         loader = true;
+                //       });
+                //     }
+                //   },
+                //   child: Text(
+                //     "REGISTER",
+                //     style: TextStyle(
+                //         color: Colors.white,
+                //         fontSize: 20,
+                //         fontWeight: FontWeight.w600),
+                //   ),
+                // ),
                 SizedBox(
                   height: 20,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    // crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Already have an account?",
-                        style: TextStyle(fontSize: 17.5, color: Colors.black54),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  // crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Already have an account?",
+                      style: TextStyle(fontSize: 17.5, color: Colors.black54),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginView()),
+                        );
+                      },
+                      child: Text(
+                        "Login here!",
+                        style: TextStyle(fontSize: 17.5, color: Colors.blue),
                       ),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginView()),
-                          );
-                        },
-                        child: Text(
-                          "Login here!",
-                          style: TextStyle(fontSize: 17.5, color: Colors.blue),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 30,
