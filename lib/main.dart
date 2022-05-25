@@ -1,14 +1,22 @@
 import 'package:da_techno_app/screen/login/login_view.dart';
 import 'package:flutter/material.dart';
-import 'package:device_preview/device_preview.dart';
+// import 'package:device_preview/device_preview.dart';
+import 'package:flutter/services.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
-// void main() {
-//   runApp(const MyApp());
-// }
-void main() => runApp(DevicePreview(
-    enabled: true,
-    tools: [...DevicePreview.defaultTools],
-    builder: (context) => MyApp()));
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(new MyApp());
+  });
+}
+// void main() => runApp(DevicePreview(
+//     enabled: true,
+
+//     tools: [...DevicePreview.defaultTools],
+
+//     builder: (context) => MyApp()));
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -17,6 +25,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      builder: (context, child) => ResponsiveWrapper.builder(child,
+          maxWidth: 1200,
+          minWidth: 480,
+          defaultScale: true,
+          
+          breakpoints: [
+            ResponsiveBreakpoint.resize(480, name: MOBILE),
+            ResponsiveBreakpoint.autoScale(800, name: TABLET),
+            ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+          ],
+          background: Container(color: Color(0xFFF5F5F5))),
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.

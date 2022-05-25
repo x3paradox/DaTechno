@@ -3,6 +3,14 @@ import 'package:da_techno_app/model/main_categories.dart';
 import 'package:da_techno_app/screen/add_to_cart/add_to_cart_process_view.dart';
 import 'package:da_techno_app/screen/notification_view.dart';
 import 'package:da_techno_app/screen/product_details/product_details_view.dart';
+import 'package:da_techno_app/screen/product_list/Beauty/beauty_category_list.dart';
+import 'package:da_techno_app/screen/product_list/Electronics/electronics_category_view.dart';
+import 'package:da_techno_app/screen/product_list/Fashion/fashion_categories_view.dart';
+import 'package:da_techno_app/screen/product_list/Fashion/fashion_category_view.dart';
+import 'package:da_techno_app/screen/product_list/Fashion/fashion_product_list_view.dart';
+import 'package:da_techno_app/screen/product_list/Furnitures/furiture_category_view.dart';
+import 'package:da_techno_app/screen/product_list/Mobile/mobile_subcategory/mobile_subcategorylist_view.dart';
+import 'package:da_techno_app/screen/product_list/Nutrition/nutrition_category_list_view.dart';
 import 'package:da_techno_app/screen/product_list/product_category_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +18,7 @@ import 'package:badges/badges.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:searchbar_animation/searchbar_animation.dart';
 
 // import '../Model/categories.dart';
 
@@ -22,13 +31,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Categories> category = [
-    Categories(imgLabel: 'assets/mobile.png', name: 'Mobiles'),
+    Categories(
+      imgLabel: 'assets/mobile.png',
+      name: 'Mobiles',
+    ),
     Categories(imgLabel: 'assets/appliance.png', name: 'Appliances'),
     Categories(imgLabel: 'assets/nutrition.png', name: 'Nutritions'),
-    Categories(imgLabel: 'assets/mobile.png', name: 'Mobiles'),
-    Categories(imgLabel: 'assets/appliance.png', name: 'Appliances'),
-    Categories(imgLabel: 'assets/nutrition.png', name: 'Nutritions'),
-    Categories(imgLabel: 'assets/mobile.png', name: 'Mobiles'),
+    Categories(imgLabel: 'assets/electronics.png', name: 'Electronics'),
+    Categories(imgLabel: 'assets/furniture.png', name: 'Furniture'),
+    Categories(imgLabel: 'assets/fashion.jpg', name: 'Fashion'),
+    Categories(imgLabel: 'assets/cosmetic.jpg', name: 'Beauty'),
   ];
   List<String> list = [
     'summer-sale-special-offer-banner-vector-25170371.jpg',
@@ -42,108 +54,131 @@ class _HomePageState extends State<HomePage> {
   String location = 'Mumbai';
   String pincode = '400067';
 
+  TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-
           elevation: 0,
+
           actions: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => AddToCartProcessView()),
-                );
-              },
-              child: Badge(
-                  badgeContent: Text(
-                    '2',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  position: BadgePosition.topEnd(top: 4, end: 20),
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: Image(
-                      image: AssetImage('assets/shopping.png'),
-                      height: 30,
-                    ),
-                  )
-                  // child: IconButton(
-                  //   icon: Icon(Icons.),
-                  //   onPressed: () {},
-                  // ),
-                  ),
+            // Badge(
+            //     badgeContent: Text(
+            //       '2',
+            //       style: TextStyle(color: Colors.white),
+            //     ),
+            //     position: BadgePosition.topEnd(top: 4, end: 20),
+            //     child: Padding(
+            //       padding: const EdgeInsets.only(right: 8),
+            //       child: Image(
+            //         image: AssetImage('assets/shopping.png'),
+            //         height: 30,
+            //       ),
+            //     )
+            //     // child: IconButton(
+            //     //   icon: Icon(Icons.),
+            //     //   onPressed: () {},
+            //     // ),
+            //     ),
+            // SearchBarAnimation(
+            //   // textController: searchController,
+            //   textEditingController: searchController,
+            //   isOriginalAnimation: false,
+            //   searchBoxWidth: MediaQuery.of(context).size.width * 0.850,
+            //   buttonBorderColour: Colors.black45,
+            //   buttonIcon: Icons.search,
+            //   onFieldSubmitted: (String value) {
+            //     debugPrint('onFieldSubmitted value $value');
+            //   },
+            // ),
+
+            Badge(
+              // padding: EdgeInsets,
+              badgeContent: Text(
+                '4',
+                style: TextStyle(color: Colors.white),
+              ),
+              position: BadgePosition.topEnd(top: 0, end: 2),
+              child: IconButton(
+                icon: Icon(
+                  Icons.notifications,
+                ),
+                onPressed: () {},
+              ),
             ),
           ],
+
+          centerTitle: true,
+          title: Container(
+            width: MediaQuery.of(context).size.width * 0.650,
+            child: CupertinoSearchTextField(
+              padding: EdgeInsets.only(top: 5, bottom: 5),
+            ),
+          ),
           // leading:
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
           shadowColor: Colors.transparent,
-          title: Padding(
-            padding: const EdgeInsets.only(top: 15.0),
-            child: Image(
-              image: AssetImage(
-                'assets/logo-da-square.png',
-              ),
-              height: 65,
-              fit: BoxFit.fitHeight,
-            ),
-          ),
+          // title: Padding(
+          //   padding: const EdgeInsets.only(top: 15.0),
+          //   child: Image(
+          //     image: AssetImage(
+          //       'assets/logo-da-square.png',
+          //     ),
+          //     height: 65,
+          //     fit: BoxFit.fitHeight,
+          //   ),
+          // ),
         ),
         backgroundColor: Colors.grey[200],
         body: Column(
           children: [
-            Container(
-              // height: 60,
-              width: MediaQuery.of(context).size.width * 1,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(25),
-                  bottomRight: Radius.circular(25),
-                ),
-              ),
+            // Container(
+            //   // height: 60,
+            //   width: MediaQuery.of(context).size.width,
+            //   decoration: BoxDecoration(
+            //     color: Colors.white,
+            //     borderRadius: BorderRadius.only(
+            //       bottomLeft: Radius.circular(25),
+            //       bottomRight: Radius.circular(25),
+            //     ),
+            //   ),
 
-              padding: EdgeInsets.only(bottom: 12, left: 12, right: 12, top: 6),
+            //   padding: EdgeInsets.only(bottom: 12, left: 12, right: 12, top: 6),
 
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.65,
-                    child: CupertinoSearchTextField(),
-                  ),
-                  Badge(
-                    // padding: EdgeInsets,
-                    badgeContent: Text(
-                      '4',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    position: BadgePosition.topEnd(top: 0, end: 2),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.notifications,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => NotificationView()),
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              ),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //     children: [
+            //       Container(
+            //         width: MediaQuery.of(context).size.width * 0.83,
+            //         child: CupertinoSearchTextField(),
+            //       ),
+            //       Expanded(
+            //         child: Badge(
+            //           // padding: EdgeInsets,
+            //           badgeContent: Text(
+            //             '4',
+            //             style: TextStyle(color: Colors.white),
+            //           ),
+            //           position: BadgePosition.topEnd(top: 0, end: 2),
+            //           child: IconButton(
+            //             icon: Icon(
+            //               Icons.notifications,
+            //             ),
+            //             onPressed: () {},
+            //           ),
+            //         ),
+            //       ),
+            //     ],
+            //   ),
 
-              // SizedBox(
-              //   height: 5,
-              // )
-            ),
+            //   // SizedBox(
+            //   //   height: 5,
+            //   // )
+            // ),
             Expanded(
               child: SingleChildScrollView(
                 physics: RangeMaintainingScrollPhysics(),
@@ -201,12 +236,59 @@ class _HomePageState extends State<HomePage> {
                         itemBuilder: (ctx, index) {
                           return GestureDetector(
                             onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        ProductCategoryView()),
-                              );
+                              if (category[index].name.toString() ==
+                                  'Mobiles') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          MobileSubcatgoryListView()),
+                                );
+                              }
+                              if (category[index].name.toString() ==
+                                  'Fashion') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          FashionCategoriesView()),
+                                );
+                              }
+                              if (category[index].name.toString() ==
+                                  'Nutritions') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          NutritionCategoryListView()),
+                                );
+                              }
+                              if (category[index].name.toString() ==
+                                  'Furniture') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          FurnitureCategoryView()),
+                                );
+                              }
+                              if (category[index].name.toString() ==
+                                  'Electronics') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ElectronicCategoryView()),
+                                );
+                              }
+                              if (category[index].name.toString() == 'Beauty') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          BeautyCategoryList()),
+                                );
+                              }
                             },
                             child: Padding(
                               padding: EdgeInsets.symmetric(
@@ -288,9 +370,9 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    // SizedBox(
-                    //   height: 6,
-                    // ),
+                    SizedBox(
+                      height: 6,
+                    ),
 
                     //   DefaultTabController(
                     //     length: 5,
@@ -346,6 +428,9 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         // mainAxisAlignment: MainAxisAlignment.start,
                         children: [
+                          SizedBox(
+                            height: 10,
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: Text(
@@ -405,9 +490,6 @@ class _HomePageState extends State<HomePage> {
                               )),
                             ],
                           ),
-                          SizedBox(
-                            height: 3,
-                          ),
                           Row(
                             children: [
                               Expanded(
@@ -447,9 +529,6 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               )),
                             ],
-                          ),
-                          SizedBox(
-                            height: 3,
                           ),
                         ],
                       ),
@@ -587,19 +666,19 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         // mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(6.0),
-                            child: Text(
-                              'Top Brands',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600, fontSize: 17),
-                            ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            'Top Brands',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600, fontSize: 17),
                           ),
                           Row(
                             children: [
                               Expanded(
                                   child: Padding(
-                                padding: const EdgeInsets.all(6.0),
+                                padding: const EdgeInsets.all(3.0),
                                 child: Stack(
                                   children: [
                                     Image(
@@ -616,7 +695,7 @@ class _HomePageState extends State<HomePage> {
                               )),
                               Expanded(
                                   child: Padding(
-                                padding: const EdgeInsets.all(6.0),
+                                padding: const EdgeInsets.all(3.0),
                                 child: Stack(
                                   children: [
                                     Image(
@@ -637,7 +716,7 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               Expanded(
                                   child: Padding(
-                                padding: const EdgeInsets.all(6.0),
+                                padding: const EdgeInsets.all(3.0),
                                 child: Stack(
                                   children: [
                                     Image(
@@ -653,7 +732,7 @@ class _HomePageState extends State<HomePage> {
                               )),
                               Expanded(
                                   child: Padding(
-                                padding: const EdgeInsets.all(6.0),
+                                padding: const EdgeInsets.all(3.0),
                                 child: Stack(
                                   children: [
                                     Image(

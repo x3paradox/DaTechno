@@ -11,6 +11,8 @@ class ProductCategoryView extends StatefulWidget {
 }
 
 class _ProductCategoryViewState extends State<ProductCategoryView> {
+  final CarouselController _controller = CarouselController();
+  int _current = 0;
   List<String> list = [
     'category_banner.jpg',
     'category_banner1.jpg',
@@ -69,31 +71,67 @@ class _ProductCategoryViewState extends State<ProductCategoryView> {
                 color: Colors.white,
                 width: MediaQuery.of(context).size.width,
                 // width: MediaQuery.of(context).size.width,
-                child: CarouselSlider(
-                  options: CarouselOptions(enableInfiniteScroll: false
-                      // aspectRatio: 16 / 9,
-                      // viewportFraction: 1,
-                      // autoPlay: true,
-                      // autoPlayInterval: Duration(seconds: 5),
-                      ),
-                  items: list
-                      .map((item) => SimpleShadow(
-                            child: Container(
-                              margin: const EdgeInsets.all(15.0),
-                              // margin: EdgeInsets.all(5),
-                              width: MediaQuery.of(context).size.width,
+                child: Column(
+                  children: [
+                    CarouselSlider(
+                      options: CarouselOptions(
+                          onPageChanged: (index, reason) {
+                            setState(() {
+                              _current = index;
+                            });
+                          },
+                          enableInfiniteScroll: false
+                          // aspectRatio: 16 / 9,
+                          // viewportFraction: 1,
+                          // autoPlay: true,
+                          // autoPlayInterval: Duration(seconds: 5),
+                          ),
+                      items: list
+                          .map((item) => SimpleShadow(
+                                child: Container(
+                                  margin: const EdgeInsets.all(15.0),
+                                  // margin: EdgeInsets.all(5),
+                                  width: MediaQuery.of(context).size.width,
 
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(15)),
-                              clipBehavior: Clip.antiAlias,
-                              child: Image(
-                                fit: BoxFit.fill,
-                                image: AssetImage('assets/$item'),
-                              ),
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(15)),
+                                  clipBehavior: Clip.antiAlias,
+                                  child: Image(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage('assets/$item'),
+                                  ),
+                                ),
+                              ))
+                          .toList(),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: list.asMap().entries.map((entry) {
+                        return GestureDetector(
+                          onTap: () => _controller.animateToPage(entry.key),
+                          child: Container(
+                            width: 9.0,
+                            height: 9.0,
+                            margin: EdgeInsets.only(
+                              bottom: 10,
+                              left: 4,
+                              right: 4,
                             ),
-                          ))
-                      .toList(),
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: (_current == entry.key
+                                      ? Color(0xFFFF4E00)
+                                      : Colors.blue[200]
+                                  // color: Color(0xFFFF4E00)
+                                  //     .withOpacity(_current == entry.key ? 0.9 : 0.4),
+                                  ),
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  ],
                 ),
               ),
               Padding(
@@ -127,7 +165,8 @@ class _ProductCategoryViewState extends State<ProductCategoryView> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => FashionProductListView()),
+                                    builder: (context) =>
+                                        FashionProductListView()),
                               );
                             },
                             child: Column(

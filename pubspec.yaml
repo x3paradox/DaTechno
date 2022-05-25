@@ -57,6 +57,22 @@ dependencies:
   device_preview: ^1.0.0
   figma_squircle: ^0.5.3
   auth_buttons: ^2.0.4
+  searchbar_animation: ^0.0.2
+  dependencies:
+  flutter_neumorphic: ^3.2.0
+  draggable_home: ^1.0.3
+  cupertino_list_tile: ^0.2.1
+  gradient_widgets: ^0.6.0
+  dropdown_button2: ^1.5.2
+  bubble_radio_button: ^0.0.3
+  easy_image_viewer: ^1.0.4
+  responsive_framework: ^0.2.0
+  quantity_input: ^1.0.2
+  #flick_video_player: ^0.3.1
+  #provider: ^6.0.1
+  #video_player: ^2.4.2
+  flutter_cube: ^0.1.1
+  
   
 
 dev_dependencies:

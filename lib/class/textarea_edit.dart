@@ -78,7 +78,7 @@ class TextArea extends StatelessWidget {
             return null;
           }
         }
-        return null;
+        // return null;
       },
 
       decoration: InputDecoration(

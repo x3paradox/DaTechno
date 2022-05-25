@@ -52,9 +52,9 @@ class _NotificationViewState extends State<NotificationView> {
                     children: [
                       SimpleShadow(
                         child: GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
+                          // onTap: () {
+                          //   Navigator.pop(context);
+                          // },
                           child: CircleAvatar(
                             maxRadius: 25,
                             minRadius: 15,
