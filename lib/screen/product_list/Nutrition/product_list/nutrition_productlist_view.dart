@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:da_techno_app/screen/product_list/Nutrition/Nutrition%20Product%20Detail/nutrition_product_detail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -185,120 +186,130 @@ class _NutritionProductListViewState extends State<NutritionProductListView> {
                   physics: NeverScrollableScrollPhysics(),
                   itemCount: 5,
                   itemBuilder: (BuildContext context, int index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        width: 390,
-                        height: 150,
-                        decoration: BoxDecoration(
-                            border: Border.all(color: Color(0xff6F6F6F)),
-                            borderRadius: BorderRadius.circular(12)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            FittedBox(
-                              child: Container(
-                                width: 118,
-                                height: 150,
-                                decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.white),
-                                    borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(12),
-                                        topLeft: Radius.circular(12)),
-                                    color: Color(0xffEDEDED)),
-                                child: FadeInImage(
-                                    height: 119,
-                                    fit: BoxFit.contain,
-                                    fadeInDuration:
-                                        Duration(milliseconds: 5000),
-                                    width: 102,
-                                    placeholder: AssetImage(
-                                        'assets/placeholder_image.jpg'),
-                                    image: AssetImage(
-                                      'assets/${productImage[index]}',
-                                    )),
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  NutritionProductDetailView()),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: 390,
+                          height: 150,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Color(0xff6F6F6F)),
+                              borderRadius: BorderRadius.circular(12)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              FittedBox(
+                                child: Container(
+                                  width: 118,
+                                  height: 150,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(color: Colors.white),
+                                      borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(12),
+                                          topLeft: Radius.circular(12)),
+                                      color: Color(0xffEDEDED)),
+                                  child: FadeInImage(
+                                      height: 119,
+                                      fit: BoxFit.contain,
+                                      fadeInDuration:
+                                          Duration(milliseconds: 5000),
+                                      width: 102,
+                                      placeholder: AssetImage(
+                                          'assets/placeholder_image.jpg'),
+                                      image: AssetImage(
+                                        'assets/${productImage[index]}',
+                                      )),
+                                ),
                               ),
-                            ),
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.6,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  AutoSizeText(
-                                    "MuscleBlaze Biozyme Performance Whey",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w400),
-                                    textAlign: TextAlign.start,
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                    minFontSize: 17,
-                                  ),
-                                  AutoSizeText(
-                                    "4.4 lb . Rich Chocolate",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.normal,
-                                        color: Color(0xff6F6F6F)),
-                                    textAlign: TextAlign.justify,
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    minFontSize: 15,
-                                  ),
-                                  RatingBar.builder(
-                                    initialRating: 5,
-                                    minRating: 0.5,
-                                    direction: Axis.horizontal,
-                                    allowHalfRating: true,
-                                    itemCount: 5,
-                                    itemSize: 14,
-                                    // itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                                    itemBuilder: (context, _) => Icon(
-                                      Icons.star,
-                                      // size: 5,
-                                      color: Color(0xffFF8C4C),
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.6,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    AutoSizeText(
+                                      "MuscleBlaze Biozyme Performance Whey",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w400),
+                                      textAlign: TextAlign.start,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      minFontSize: 17,
                                     ),
-                                    onRatingUpdate: (rating) {
-                                      print(rating);
-                                    },
-                                  ),
-                                  Row(
-                                    children: [
-                                      AutoSizeText(
-                                        '3,599',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.normal,
-                                            fontSize: 12,
-                                            color: Colors.black),
-                                        minFontSize: 5,
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
+                                    AutoSizeText(
+                                      "4.4 lb . Rich Chocolate",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.normal,
+                                          color: Color(0xff6F6F6F)),
+                                      textAlign: TextAlign.justify,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      minFontSize: 15,
+                                    ),
+                                    RatingBar.builder(
+                                      initialRating: 5,
+                                      minRating: 0.5,
+                                      direction: Axis.horizontal,
+                                      allowHalfRating: true,
+                                      itemCount: 5,
+                                      itemSize: 14,
+                                      // itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                                      itemBuilder: (context, _) => Icon(
+                                        Icons.star,
+                                        // size: 5,
+                                        color: Color(0xffFF8C4C),
                                       ),
-                                      AutoSizeText(
-                                        '4,499',
-                                        style: TextStyle(
-                                            decoration:
-                                                TextDecoration.lineThrough,
-                                            fontWeight: FontWeight.normal,
-                                            fontSize: 12,
-                                            color: Colors.black45),
-                                        minFontSize: 5,
-                                        maxLines: 1,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                      onRatingUpdate: (rating) {
+                                        print(rating);
+                                      },
+                                    ),
+                                    Row(
+                                      children: [
+                                        AutoSizeText(
+                                          '3,599',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 12,
+                                              color: Colors.black),
+                                          minFontSize: 5,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        AutoSizeText(
+                                          '4,499',
+                                          style: TextStyle(
+                                              decoration:
+                                                  TextDecoration.lineThrough,
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 12,
+                                              color: Colors.black45),
+                                          minFontSize: 5,
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Icon(Icons.favorite_border_outlined),
-                            )
-                          ],
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Icon(Icons.favorite_border_outlined),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     );

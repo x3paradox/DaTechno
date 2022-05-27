@@ -3,6 +3,7 @@ import 'package:da_techno_app/model/main_categories.dart';
 import 'package:da_techno_app/screen/add_to_cart/add_to_cart_process_view.dart';
 import 'package:da_techno_app/screen/notification_view.dart';
 import 'package:da_techno_app/screen/product_details/product_details_view.dart';
+import 'package:da_techno_app/screen/product_list/Appliances/Sub_Category/appliances_category_list_view.dart';
 import 'package:da_techno_app/screen/product_list/Beauty/beauty_category_list.dart';
 import 'package:da_techno_app/screen/product_list/Electronics/electronics_category_view.dart';
 import 'package:da_techno_app/screen/product_list/Fashion/fashion_categories_view.dart';
@@ -243,6 +244,15 @@ class _HomePageState extends State<HomePage> {
                                   MaterialPageRoute(
                                       builder: (context) =>
                                           MobileSubcatgoryListView()),
+                                );
+                              }
+                              if (category[index].name.toString() ==
+                                  'Appliances') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          AppliancesCategoryListView()),
                                 );
                               }
                               if (category[index].name.toString() ==
