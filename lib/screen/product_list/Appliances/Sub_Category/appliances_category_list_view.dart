@@ -1,5 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:da_techno_app/screen/product_list/Appliances/Appliances%20Product%20Detail/appliances_product_details_view.dart';
+import 'package:da_techno_app/screen/product_list/Appliances/Appliances%20Product%20List%20View/appliances_product_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 
@@ -24,10 +26,10 @@ class _AppliancesCategoryListViewState
   List<String> lists = [
     'washing_machine.jpg',
     '4KTV.png',
-    'washing_machine.jpg',
+    'hometheater.jpg',
     '4KTV.png',
     'washing_machine.jpg',
-    '4KTV.png'
+    'hometheater.jpg'
   ];
   List<String> bestSeller = [
     '4KTV.png',
@@ -44,11 +46,10 @@ class _AppliancesCategoryListViewState
   List<String> categoryName = [
     'Washing Machine',
     '4K TVs',
-    'Washing Machine',
+    'HomeTheatre',
     '4K TVs',
     'Washing Machine',
-    '4K TVs',
-    'Washing Machine',
+    'HomeTheatre',
   ];
   @override
   Widget build(BuildContext context) {
@@ -84,7 +85,7 @@ class _AppliancesCategoryListViewState
                       width: 20,
                     ),
                     Text(
-                      'Fashion',
+                      'Appliances',
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
@@ -128,58 +129,69 @@ class _AppliancesCategoryListViewState
                             mainAxisSpacing: 20,
                           ),
                           itemBuilder: (context, index) {
-                            return GridTile(
-                              // key: ValueKey(_products[index]['id']),
-                              child: Container(
-                                width: 166.46,
-                                height: 163.49,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    color: Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                        offset: const Offset(
-                                          2.0,
-                                          2.0,
+                            return GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          AppliancesProductListView()),
+                                );
+                              },
+                              child: GridTile(
+                                // key: ValueKey(_products[index]['id']),
+                                child: Container(
+                                  width: 166.46,
+                                  height: 163.49,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black12,
+                                          offset: const Offset(
+                                            2.0,
+                                            2.0,
+                                          ),
+                                          blurRadius: 10.0,
+                                          spreadRadius: 0.5,
+                                        ), //BoxShadow
+                                        BoxShadow(
+                                          color: Colors.white,
+                                          offset: const Offset(0.0, 0.0),
+                                          blurRadius: 0.0,
+                                          spreadRadius: 0.0,
                                         ),
-                                        blurRadius: 10.0,
-                                        spreadRadius: 0.5,
-                                      ), //BoxShadow
-                                      BoxShadow(
-                                        color: Colors.white,
-                                        offset: const Offset(0.0, 0.0),
-                                        blurRadius: 0.0,
-                                        spreadRadius: 0.0,
-                                      ),
-                                    ]),
-                              ),
-                              header: ClipRRect(
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(12),
-                                    topRight: Radius.circular(12)),
-                                child: FadeInImage(
-                                  height: 113.95,
-                                  fit: BoxFit.fill,
-                                  fadeInDuration: Duration(milliseconds: 5000),
-                                  width: 165.48,
-                                  placeholder: AssetImage(
-                                      'assets/placeholder_image.jpg'),
-                                  image: AssetImage(
-                                    'assets/${lists[index]}',
+                                      ]),
+                                ),
+                                header: ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(12),
+                                      topRight: Radius.circular(12)),
+                                  child: FadeInImage(
+                                    height: 113.95,
+                                    fit: BoxFit.fill,
+                                    fadeInDuration:
+                                        Duration(milliseconds: 5000),
+                                    width: 165.48,
+                                    placeholder: AssetImage(
+                                        'assets/placeholder_image.jpg'),
+                                    image: AssetImage(
+                                      'assets/${lists[index]}',
+                                    ),
                                   ),
                                 ),
-                              ),
-                              footer: Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 30, left: 10, right: 10),
-                                child: GridTileBar(
-                                    title: AutoSizeText(
-                                  "${categoryName[index]}",
-                                  style: TextStyle(color: Colors.black),
-                                  textAlign: TextAlign.center,
-                                  minFontSize: 12,
-                                )),
+                                footer: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 30, left: 10, right: 10),
+                                  child: GridTileBar(
+                                      title: AutoSizeText(
+                                    "${categoryName[index]}",
+                                    style: TextStyle(color: Colors.black),
+                                    textAlign: TextAlign.center,
+                                    minFontSize: 12,
+                                  )),
+                                ),
                               ),
                             );
                             // return Padding(

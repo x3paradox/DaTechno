@@ -72,6 +72,7 @@ dependencies:
   #provider: ^6.0.1
   #video_player: ^2.4.2
   flutter_cube: ^0.1.1
+  syncfusion_flutter_datagrid: ^20.1.57
   
   
 
@@ -100,6 +101,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/
+     - assets/artificial_jwellery/
+     - assets/appliances/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

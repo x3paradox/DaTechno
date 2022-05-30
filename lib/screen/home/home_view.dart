@@ -4,6 +4,7 @@ import 'package:da_techno_app/screen/add_to_cart/add_to_cart_process_view.dart';
 import 'package:da_techno_app/screen/notification_view.dart';
 import 'package:da_techno_app/screen/product_details/product_details_view.dart';
 import 'package:da_techno_app/screen/product_list/Appliances/Sub_Category/appliances_category_list_view.dart';
+import 'package:da_techno_app/screen/product_list/Artificial%20Jwellery/Category_List/artificial_category_list_view.dart';
 import 'package:da_techno_app/screen/product_list/Beauty/beauty_category_list.dart';
 import 'package:da_techno_app/screen/product_list/Electronics/electronics_category_view.dart';
 import 'package:da_techno_app/screen/product_list/Fashion/fashion_categories_view.dart';
@@ -42,6 +43,9 @@ class _HomePageState extends State<HomePage> {
     Categories(imgLabel: 'assets/furniture.png', name: 'Furniture'),
     Categories(imgLabel: 'assets/fashion.jpg', name: 'Fashion'),
     Categories(imgLabel: 'assets/cosmetic.jpg', name: 'Beauty'),
+    Categories(
+        imgLabel: 'assets/artificial_jwellery/aj.jpg',
+        name: 'Jwellery'),
   ];
   List<String> list = [
     'summer-sale-special-offer-banner-vector-25170371.jpg',
@@ -299,6 +303,15 @@ class _HomePageState extends State<HomePage> {
                                           BeautyCategoryList()),
                                 );
                               }
+                              if (category[index].name.toString() ==
+                                  'Jwellery') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ArtificialJwelleryCategoryListView()),
+                                );
+                              }
                             },
                             child: Padding(
                               padding: EdgeInsets.symmetric(
@@ -326,7 +339,7 @@ class _HomePageState extends State<HomePage> {
                           );
                         },
                         scrollDirection: Axis.horizontal,
-                        itemCount: 7,
+                        itemCount: 8,
                       ),
                     ),
                     SizedBox(
