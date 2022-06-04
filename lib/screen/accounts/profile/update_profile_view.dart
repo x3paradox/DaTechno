@@ -59,9 +59,9 @@ class _UpdateProfileViewState extends State<UpdateProfileView> {
                         elevation: 4,
                         loader: Text('HI'),
                         placeholderColors: [
-                          Color(0xffff4e00),
-                          Color(0xffff4e00),
-                          Color(0xffff4e00),
+                          Color(0xffe61e91),
+                          Color(0xffe61e91),
+                          Color(0xffe61e91),
                         ],
                         // backgroundColor: Colors.black,
                         name: 'Aayush Shah',
@@ -337,7 +337,7 @@ class _UpdateProfileViewState extends State<UpdateProfileView> {
                           style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
                         style: TextButton.styleFrom(
-                          backgroundColor: Color(0xffff4e00),
+                          backgroundColor: Color(0xffb6d87b),
                           primary: Colors.black,
                           minimumSize: const Size(double.infinity, 50),
                           shape: RoundedRectangleBorder(

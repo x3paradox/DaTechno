@@ -134,7 +134,7 @@ class _ChangePasswordViewState extends State<ChangePasswordView> {
                                   TextStyle(color: Colors.white, fontSize: 16),
                             ),
                             style: TextButton.styleFrom(
-                              backgroundColor: Color(0xffff4e00),
+                              backgroundColor: Color(0xffb6d87b),
                               primary: Colors.black,
                               minimumSize: const Size(500, 50),
                               shape: RoundedRectangleBorder(

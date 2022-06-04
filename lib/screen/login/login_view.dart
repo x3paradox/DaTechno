@@ -17,13 +17,13 @@ class LoginView extends StatefulWidget {
   State<LoginView> createState() => _LoginViewState();
 }
 
-void _showButtonPressDialog(BuildContext context, String provider) {
-  Scaffold.of(context).showSnackBar(SnackBar(
-    content: Text('$provider Button Pressed!'),
-    backgroundColor: Colors.black26,
-    duration: Duration(milliseconds: 400),
-  ));
-}
+// void _showButtonPressDialog(BuildContext context, String provider) {
+//   Scaffold.of(context).showSnackBar(SnackBar(
+//     content: Text('$provider Button Pressed!'),
+//     backgroundColor: Colors.black26,
+//     duration: Duration(milliseconds: 400),
+//   ));
+// }
 
 class _LoginViewState extends State<LoginView> {
   @override
@@ -53,7 +53,7 @@ class _LoginViewState extends State<LoginView> {
                   // controller: userInput,
                   style: TextStyle(
                     fontSize: 24,
-                    color: Color(0xffFF4E00),
+                    color: Color(0xffb6d87b),
                     fontWeight: FontWeight.normal,
                     // fontFamily: "Raleway",
                   ),
@@ -72,7 +72,7 @@ class _LoginViewState extends State<LoginView> {
                     //add prefix icon
                     prefixIcon: Icon(
                       Icons.email_rounded,
-                      color: Color(0xffFF4E00),
+                      color: Color(0xffb6d87b),
                     ),
 
                     // errorText: "Error",
@@ -118,7 +118,7 @@ class _LoginViewState extends State<LoginView> {
                   // controller: userInput,
                   style: TextStyle(
                     fontSize: 24,
-                    color: Color(0xffFF4E00),
+                    color: Color(0xffb6d87b),
                     fontWeight: FontWeight.normal,
                   ),
                   onChanged: (value) {
@@ -136,7 +136,7 @@ class _LoginViewState extends State<LoginView> {
                     //add prefix icon
                     prefixIcon: Icon(
                       Icons.password,
-                      color: Color(0xffFF4E00),
+                      color: Color(0xffb6d87b),
                     ),
 
                     // errorText: "Error",
@@ -184,7 +184,7 @@ class _LoginViewState extends State<LoginView> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Color(0xffFF4E00),
+                      color: Color(0xffb6d87b),
                     ),
                     child: CupertinoButton(
                       onPressed: () {
@@ -196,7 +196,7 @@ class _LoginViewState extends State<LoginView> {
                       },
                       child: AutoSizeText(
                         "login".toUpperCase(),
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.black),
                         presetFontSizes: [40, 20, 14],
                         maxLines: 4,
                       ),
@@ -207,7 +207,7 @@ class _LoginViewState extends State<LoginView> {
               //   padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
               //   child: AnimatedButton(
               //     width: MediaQuery.of(context).size.width * 0.5,
-              //     color: Color(0xffFF4E00),
+              //     color: Color(0xffb6d87b),
               //     shadowDegree: ShadowDegree.dark,
               //     enabled: true,
               //     onPressed: () {

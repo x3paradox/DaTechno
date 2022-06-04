@@ -14,13 +14,13 @@ class RegisterView extends StatefulWidget {
   State<RegisterView> createState() => _RegisterViewState();
 }
 
-void _showButtonPressDialog(BuildContext context, String provider) {
-  Scaffold.of(context).showSnackBar(SnackBar(
-    content: Text('$provider Button Pressed!'),
-    backgroundColor: Colors.black26,
-    duration: Duration(milliseconds: 400),
-  ));
-}
+// void _showButtonPressDialog(BuildContext context, String provider) {
+//   Scaffold.of(context).showSnackBar(SnackBar(
+//     content: Text('$provider Button Pressed!'),
+//     backgroundColor: Colors.black26,
+//     duration: Duration(milliseconds: 400),
+//   ));
+// }
 
 class _RegisterViewState extends State<RegisterView> {
   final formKey = GlobalKey<FormState>();
@@ -66,7 +66,7 @@ class _RegisterViewState extends State<RegisterView> {
                     controller: registerUserName,
                     style: TextStyle(
                       fontSize: 24,
-                      color: Color(0xffFF4E00),
+                      color: Color(0xffb6d87b),
                       fontWeight: FontWeight.normal,
                       // fontFamily: "Raleway",
                     ),
@@ -86,7 +86,7 @@ class _RegisterViewState extends State<RegisterView> {
                       //add prefix icon
                       prefixIcon: Icon(
                         Icons.person,
-                        color: Color(0xffFF4E00),
+                        color: Color(0xffb6d87b),
                       ),
 
                       // errorText: "Error",
@@ -132,7 +132,7 @@ class _RegisterViewState extends State<RegisterView> {
                     controller: registerEmail,
                     style: TextStyle(
                       fontSize: 24,
-                      color: Color(0xffFF4E00),
+                      color: Color(0xffb6d87b),
                       fontWeight: FontWeight.normal,
                     ),
                     // onChanged: (value) {
@@ -151,7 +151,7 @@ class _RegisterViewState extends State<RegisterView> {
                       //add prefix icon
                       prefixIcon: Icon(
                         Icons.email,
-                        color: Color(0xffFF4E00),
+                        color: Color(0xffb6d87b),
                       ),
 
                       // errorText: "Error",
@@ -197,7 +197,7 @@ class _RegisterViewState extends State<RegisterView> {
                     controller: registerPassword,
                     style: TextStyle(
                       fontSize: 24,
-                      color: Color(0xffFF4E00),
+                      color: Color(0xffb6d87b),
                       fontWeight: FontWeight.normal,
                     ),
                     // onChanged: (value) {
@@ -222,7 +222,7 @@ class _RegisterViewState extends State<RegisterView> {
                       //add prefix icon
                       prefixIcon: Icon(
                         Icons.password,
-                        color: Color(0xffFF4E00),
+                        color: Color(0xffb6d87b),
                       ),
                       suffixIcon: InkWell(
                         child: Icon(
@@ -280,7 +280,7 @@ class _RegisterViewState extends State<RegisterView> {
                     controller: registerConfirmPassword,
                     style: TextStyle(
                       fontSize: 24,
-                      color: Color(0xffFF4E00),
+                      color: Color(0xffb6d87b),
                       fontWeight: FontWeight.normal,
                     ),
                     // onChanged: (value) {
@@ -302,7 +302,7 @@ class _RegisterViewState extends State<RegisterView> {
                       //add prefix icon
                       prefixIcon: Icon(
                         Icons.password,
-                        color: Color(0xffFF4E00),
+                        color: Color(0xffb6d87b),
                       ),
                       suffixIcon: InkWell(
                         child: Icon(
@@ -362,7 +362,7 @@ class _RegisterViewState extends State<RegisterView> {
                       height: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color(0xffFF4E00),
+                        color: Color(0xffb6d87b),
                       ),
                       child: CupertinoButton(
                         onPressed: () {
@@ -374,7 +374,7 @@ class _RegisterViewState extends State<RegisterView> {
                         },
                         child: AutoSizeText(
                           "register".toUpperCase(),
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.black),
                           presetFontSizes: [40, 20, 14],
                           maxLines: 4,
                         ),
@@ -383,7 +383,7 @@ class _RegisterViewState extends State<RegisterView> {
                 ),
                 // AnimatedButton(
                 //   width: MediaQuery.of(context).size.width * 0.9,
-                //   color: Color(0xffFF4E00),
+                //   color: Color(0xffb6d87b),
                 //   shadowDegree: ShadowDegree.dark,
                 //   enabled: true,
                 //   onPressed: () {

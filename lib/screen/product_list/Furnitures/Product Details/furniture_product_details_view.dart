@@ -918,14 +918,14 @@ class _FurnitureProductDetailsViewState
                     width: MediaQuery.of(context).size.width * 0.90,
                     height: 50,
                     decoration: BoxDecoration(
-                      color: Color(0xffff4e00),
+                      color: Color(0xffb6d87b),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       // shape: BoxShape.circle,
                     ),
                     child: CupertinoButton(
                       child: const Text(
                         'BUY NOW',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.black),
                       ),
                       onPressed: () {
                         // Navigator.push(

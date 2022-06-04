@@ -55,7 +55,6 @@ class _FashionProductDetailsViewState extends State<FashionProductDetailsView> {
                       MultiImageProvider multiImageProvider =
                           MultiImageProvider(_imageProviders);
                       showImageViewerPager(context, multiImageProvider);
-                      
                     },
                     child: CarouselSlider(
                       options: CarouselOptions(
@@ -299,7 +298,7 @@ class _FashionProductDetailsViewState extends State<FashionProductDetailsView> {
                 Container(
                   width: 183,
                   height: 56,
-                  decoration: BoxDecoration(color: Color(0xffFF4E00)),
+                  decoration: BoxDecoration(color: Color(0xffb6d87b)),
                   child: CupertinoButton(
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -307,13 +306,13 @@ class _FashionProductDetailsViewState extends State<FashionProductDetailsView> {
                         children: [
                           Icon(
                             FontAwesomeIcons.shoppingBag,
-                            color: Colors.white,
+                            color: Colors.black,
                             size: 20,
                           ),
                           AutoSizeText(
                             "ADD TO BAG",
                             style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontSize: 17.5,
                                 fontWeight: FontWeight.w400),
                             maxFontSize: 17,

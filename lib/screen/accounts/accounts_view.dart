@@ -61,9 +61,9 @@ class _AccountViewState extends State<AccountView> {
                             elevation: 4,
                             // loader: Text('HI'),
                             placeholderColors: [
-                              Color(0xffff4e00),
-                              Color(0xffff4e00),
-                              Color(0xffff4e00),
+                              Color(0xffe61e91),
+                              Color(0xffe61e91),
+                              Color(0xffe61e91),
                             ],
                             // backgroundColor: Colors.black,
                             name: 'Aayush Shah',

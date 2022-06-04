@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:da_techno_app/screen/accounts/orders/orders_list_view.dart';
 
 import 'package:flutter/material.dart';
@@ -349,7 +350,7 @@ class _AddToCartProcessViewState extends State<AddToCartProcessView> {
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
-                        // color: Color(0xffff4e00),
+                        // color: Color(0xffb6d87b),
                         border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         // shape: BoxShape.circle,
@@ -516,11 +517,27 @@ class _AddToCartProcessViewState extends State<AddToCartProcessView> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text('Name: ${name.text}'),
-                Text('Email: ${email.text}'),
-                Text('Password: ${pass.text}'),
-                Text('Address : ${address.text}'),
-                Text('PinCode : ${pincode.text}'),
+                AutoSizeText(
+                  'Name: Rishi',
+                  style: TextStyle(fontSize: 20),
+                ),
+                AutoSizeText(
+                  'Email: myname@gmail.com',
+                  style: TextStyle(fontSize: 20),
+                ),
+                AutoSizeText(
+                  'Address: D-101, Vishal Nagar Society, Behind Vijay Dairy,Near Gujarat Gas Circle, Adajan, Surat,Gujarat,',
+                  style: TextStyle(fontSize: 20),
+                ),
+                AutoSizeText(
+                  'Pincode: 3000393',
+                  style: TextStyle(fontSize: 20),
+                )
+                // Text('Name: ${name.text}'),
+                // Text('Email: ${email.text}'),
+                // Text('Password: ${pass.text}'),
+                // Text('Address : ${address.text}'),
+                // Text('PinCode : ${pincode.text}'),
               ],
             )))
       ];
@@ -610,7 +627,7 @@ class _AddToCartProcessViewState extends State<AddToCartProcessView> {
                                         0.75,
                                     height: 53,
                                     decoration: BoxDecoration(
-                                      color: Color(0xffff4e00),
+                                      color: Color(0xffb6d87b),
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(10)),
                                       // shape: BoxShape.circle,
@@ -618,7 +635,7 @@ class _AddToCartProcessViewState extends State<AddToCartProcessView> {
                                     child: CupertinoButton(
                                       child: const Text(
                                         'PLACE ORDER',
-                                        style: TextStyle(color: Colors.white),
+                                        style: TextStyle(color: Colors.black),
                                       ),
                                       onPressed: () {
                                         if (_activeCurrentStep <
@@ -641,7 +658,7 @@ class _AddToCartProcessViewState extends State<AddToCartProcessView> {
                                   //         width:
                                   //             MediaQuery.of(context).size.width,
                                   //         decoration: BoxDecoration(
-                                  //           color: Color(0xffff4e00),
+                                  //           color: Color(0xffb6d87b),
                                   //           borderRadius: BorderRadius.all(
                                   //               Radius.circular(10)),
                                   //           // shape: BoxShape.circle,
@@ -672,7 +689,7 @@ class _AddToCartProcessViewState extends State<AddToCartProcessView> {
                                                 0.75,
                                         height: 53,
                                         decoration: BoxDecoration(
-                                          color: Color(0xffff4e00),
+                                          color: Color(0xffb6d87b),
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(10)),
                                           // shape: BoxShape.circle,
@@ -681,7 +698,7 @@ class _AddToCartProcessViewState extends State<AddToCartProcessView> {
                                           child: const Text(
                                             'CONTINUE',
                                             style:
-                                                TextStyle(color: Colors.white),
+                                                TextStyle(color: Colors.black),
                                           ),
                                           onPressed: () {
                                             if (_activeCurrentStep <
@@ -702,7 +719,7 @@ class _AddToCartProcessViewState extends State<AddToCartProcessView> {
                                                 0.75,
                                         height: 53,
                                         decoration: BoxDecoration(
-                                          color: Color(0xffff4e00),
+                                          color: Color(0xffb6d87b),
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(10)),
                                           // shape: BoxShape.circle,
@@ -711,7 +728,7 @@ class _AddToCartProcessViewState extends State<AddToCartProcessView> {
                                           child: const Text(
                                             'PAY',
                                             style:
-                                                TextStyle(color: Colors.white),
+                                                TextStyle(color: Colors.black),
                                           ),
                                           onPressed: () {
                                             Navigator.push(
@@ -732,7 +749,7 @@ class _AddToCartProcessViewState extends State<AddToCartProcessView> {
                           //         width:
                           //             MediaQuery.of(context).size.width,
                           //         decoration: BoxDecoration(
-                          //           color: Color(0xffff4e00),
+                          //           color: Color(0xffb6d87b),
                           //           borderRadius: BorderRadius.all(
                           //               Radius.circular(10)),
                           //           // shape: BoxShape.circle,

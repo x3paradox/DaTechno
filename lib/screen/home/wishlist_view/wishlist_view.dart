@@ -182,7 +182,7 @@ class _WishListPageState extends State<WishListPage> {
                                 width: MediaQuery.of(context).size.width,
                                 height: 42.5,
                                 decoration: BoxDecoration(
-                                  color: Color(0xffFF4E00),
+                                  color: Color(0xffb6d87b),
                                 ),
                                 child: CupertinoButton(
                                   onPressed: () {
@@ -194,7 +194,7 @@ class _WishListPageState extends State<WishListPage> {
                                   },
                                   child: AutoSizeText(
                                     "add to cart".toUpperCase(),
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(color: Colors.black),
                                     presetFontSizes: [40, 20, 14],
                                     maxLines: 4,
                                   ),

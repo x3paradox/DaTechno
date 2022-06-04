@@ -87,7 +87,7 @@ class TextArea extends StatelessWidget {
         //add prefix icon
         prefixIcon: Icon(
           Icons.email_rounded,
-          color: Color(0xffFF4E00),
+          color: Color(0xffb6d87b),
         ),
 
         // errorText: "Error",

@@ -824,17 +824,17 @@ class GrabbingWidget extends StatelessWidget {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12.0),
+                          // borderRadius: BorderRadius.circular(12.0),
                           gradient: LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
-                            colors: [Color(0xFFEC9F05), Color(0XFFFF4E00)],
+                            colors: [Color(0xFFF8EF42), Color(0XFF55D284)],
                           ),
                         ),
                         child: CupertinoButton(
                           child: const Text(
                             'Add to Cart',
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(color: Colors.black),
                           ),
                           onPressed: () {
                             Navigator.push(

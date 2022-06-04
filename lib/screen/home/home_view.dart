@@ -43,9 +43,7 @@ class _HomePageState extends State<HomePage> {
     Categories(imgLabel: 'assets/furniture.png', name: 'Furniture'),
     Categories(imgLabel: 'assets/fashion.jpg', name: 'Fashion'),
     Categories(imgLabel: 'assets/cosmetic.jpg', name: 'Beauty'),
-    Categories(
-        imgLabel: 'assets/artificial_jwellery/aj.jpg',
-        name: 'Jwellery'),
+    Categories(imgLabel: 'assets/artificial_jwellery/aj.jpg', name: 'Jwellery'),
   ];
   List<String> list = [
     'summer-sale-special-offer-banner-vector-25170371.jpg',
@@ -66,8 +64,13 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 80,
           automaticallyImplyLeading: false,
           elevation: 0,
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 5, top: 5),
+            child: Image.asset('assets/klogo2.png'),
+          ),
 
           actions: [
             // Badge(
